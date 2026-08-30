@@ -2,13 +2,15 @@ from pathlib import Path
 import pandas as pd
 
 
-INPUT = Path("data/processed/atw/atw_market.csv")
+INPUT = Path("data/processed/atw/atw_market_history.csv")
+FALLBACK_INPUT = Path("data/processed/atw/atw_market.csv")
 
 
 def validate_market_data():
-    print(f"Reading: {INPUT}")
+    input_path = INPUT if INPUT.exists() else FALLBACK_INPUT
+    print(f"Reading: {input_path}")
 
-    df = pd.read_csv(INPUT)
+    df = pd.read_csv(input_path)
 
     errors = []
 

@@ -1,0 +1,2 @@
+market_date,instrument,last_price,opening_price,high_price,low_price,trading_volume,change_pct,daily_return,intraday_range,intraday_range_pct,price_vs_open_pct,volume_change_pct,moving_average_5,moving_average_10,volatility_5
+2026-08-27,ATW,706.1,705.1,708,702,33145044.4,0.16,,6,0.008509431286342363,0.001418238547723727,,706.1,706.1,
