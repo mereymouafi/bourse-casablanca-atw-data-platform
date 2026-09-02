@@ -71,3 +71,32 @@ Bourse / Company Sources
           │
           ▼
    Analytics / AI
+```
+
+---
+
+## 🔄 Current Pipeline
+
+```text
+Raw Bourse CSV
+      ↓
+load_market_data.py
+      ↓
+Clean daily ATW data
+      ↓
+build_market_history.py
+      ↓
+ATW historical dataset
+      ↓
+validate_market_data.py
+      ↓
+Validated data
+      ↓
+create_market_features.py
+      ↓
+ATW market features
+      ↓
+Future analytics / dashboard / AI
+```
+
+The current active transformation stage creates a feature-rich historical market dataset to support technical analysis and later dashboards or AI-based decision support.

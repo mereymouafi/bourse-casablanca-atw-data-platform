@@ -86,4 +86,4 @@ def validate_market_data():
 
 
 if __name__ == "__main__":
-    validate_market_data()
+    validate_market_data()     

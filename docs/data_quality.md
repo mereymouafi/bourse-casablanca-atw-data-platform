@@ -82,6 +82,26 @@ Validation
 
 Historical dataset ready for analytics.
 
+## Financial Data Quality
+
+- Financial periods must be valid.
+- Numeric financial values must be numeric.
+- No fabricated financial values.
+- Source documents must be traceable.
+- Duplicate financial periods must be detected.
+- Missing values must be explicitly handled.
+
+## Dividend Data Quality
+
+- Instrument must be ATW.
+- Dividend year must be valid.
+- Dividend amount must be numeric.
+- Dividend amount should not be negative unless the source explicitly defines a special case.
+- Dates must be valid when available.
+- Duplicate dividend records must be detected.
+- Source data must be traceable.
+- No fabricated dividend values.
+
 ## Important Principle
 
 Raw source data must not be modified.
