@@ -28,12 +28,7 @@ def main():
     ]
 
     if pdf_files:
-        print("\nPDF files detected.")
-
-        print(
-            "If the PDF is scanned/image-based, OCR will be "
-            "required before structured extraction."
-        )
+        print("\nPDF files detected. OCR is intentionally not run.")
 
     print(
         "\nNo company information was extracted or invented."

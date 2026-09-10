@@ -1,39 +1,27 @@
 from pathlib import Path
 
+import pandas as pd
 
+
+INPUT = Path("data/raw/atw/dividends/atw_dividends.csv")
 OUTPUT = Path("data/processed/atw/atw_dividends.csv")
 
 
-COLUMNS = [
-    "instrument",
-    "dividend_year",
-    "dividend_amount",
-    "ex_dividend_date",
-    "payment_date",
-]
-
-
 def main():
-    print("ATW Dividend Data Preparation")
-    print("=" * 35)
+    if not INPUT.exists():
+        raise FileNotFoundError(f"Input file not found: {INPUT}")
 
-    print("\nExpected output:")
-    print(OUTPUT)
+    df = pd.read_csv(INPUT)
+    df["year"] = pd.to_numeric(df["year"], errors="coerce")
+    df["amount_mad"] = pd.to_numeric(df["amount_mad"], errors="coerce")
+    df["ex_date"] = pd.to_datetime(df["ex_date"], errors="coerce")
+    df = df.sort_values("year")
 
-    print("\nExpected columns:")
+    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    df.to_csv(OUTPUT, index=False)
 
-    for column in COLUMNS:
-        print(f"- {column}")
-
-    if OUTPUT.exists():
-        print("\nExisting dividend dataset found.")
-    else:
-        print("\nNo processed dividend dataset exists yet.")
-
-    print(
-        "\nNo dividend values were created because the "
-        "values must come from real source data."
-    )
+    print(f"Rows: {len(df)}")
+    print(f"Saved to: {OUTPUT}")
 
 
 if __name__ == "__main__":
